@@ -1,4 +1,3 @@
-# ✅ CORRECT
 from scrape_leetcode import scrape_leetcode_problems
 from codeforces import scrape_codeforces_problems
 from codechef import scrape_codechef_problems
@@ -22,7 +21,7 @@ def save_combined_problems(leetcode_limit=100, codeforces_limit=100, codechef_li
     with open("data/all_problems.json", "w") as f:
         json.dump(all_problems, f, indent=2)
 
-    print(f"✅ Total {len(all_problems)} problems saved to data/all_problems.json")
+    print(f"Total {len(all_problems)} problems saved to data/all_problems.json")
 
 
 
