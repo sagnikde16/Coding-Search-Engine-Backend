@@ -2,7 +2,7 @@ import requests
 import json
 
 def scrape_leetcode_problems(limit=200):
-    print("🔍 Starting LeetCode scrape...")
+    print("Starting LeetCode scrape...")
 
     url = "https://leetcode.com/graphql"
     query = """
@@ -55,11 +55,11 @@ def scrape_leetcode_problems(limit=200):
             data = res.json()
             questions = data["data"]["questionList"]["data"]
         except Exception as e:
-            print("❌ LeetCode error:", e)
+            print("LeetCode error:", e)
             print("Raw response:\n", res.text if 'res' in locals() else "No response received.")
             return []
 
-        print(f"✅ Received {len(questions)} questions")
+        print(f"Received {len(questions)} questions")
 
         for q in questions:
             problems.append({
@@ -74,5 +74,5 @@ def scrape_leetcode_problems(limit=200):
         if not questions:
             break
 
-    print(f"✅ Total LeetCode problems scraped: {len(problems[:limit])}")
+    print(f"Total LeetCode problems scraped: {len(problems[:limit])}")
     return problems[:limit]
