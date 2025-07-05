@@ -6,7 +6,7 @@ import json
 import os
 
 
-def save_combined_problems(leetcode_limit=100, codeforces_limit=100, codechef_limit=50, gfg_limit=50):
+def save_combined_problems(leetcode_limit=100, codeforces_limit=100, gfg_limit=50):
     print("Scraping all problems...")
 
     all_problems = (
